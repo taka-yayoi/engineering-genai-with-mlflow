@@ -4,6 +4,9 @@ A single Databricks notebook that takes a GenAI app from prototype to production
 
 This notebook was made for the kickoff session of the [Vadodara Databricks User Group](https://usergroups.databricks.com/vadodara-databricks-user-group/) (November 28, 2026).
 
+- Slides: [Engineering GenAI with MLflow (Speaker Deck)](https://speakerdeck.com/taka_aki/engineering-genai-with-mlflow)
+- Questions: [community discussion](https://usergroups.databricks.com/v0/forum/engineering-genai-with-mlflow-331/topic/engineering-genai-with-mlflow-vadodara-dug-nov-28-2026-questions-and-follow-up-903/)
+
 ## The question this notebook answers
 
 When you change a prompt, how do you know the change made your app better, and how do you keep track of which prompt version produced which result?
@@ -69,6 +72,10 @@ The monitors keep scoring new traces until you stop them. On Free Edition, you c
 - **Traces in Unity Catalog:** The production experiment stores its traces in Unity Catalog tables, so you can query them with SQL. On Free Edition, this is also required: a Databricks App can't upload trace data to the experiment's default storage. The app's service principal needs `MODIFY` and `SELECT` on the four trace tables. The notebook grants them in Step 7.
 - **Permissions for the app:** Prompt Registry is in Beta. During the Beta, loading a prompt needs `CREATE FUNCTION`, `EXECUTE` and `MANAGE` on the schema, even for read-only use. `MANAGE` is a strong privilege, so in a real project, keep prompts in a schema of their own.
 - **LLM output varies:** Your evaluation results may not match the numbers in the session exactly.
+
+## Questions
+
+Post your questions in the [community discussion](https://usergroups.databricks.com/v0/forum/engineering-genai-with-mlflow-331/topic/engineering-genai-with-mlflow-vadodara-dug-nov-28-2026-questions-and-follow-up-903/) on the Vadodara Databricks User Group page.
 
 ## Learn more
 
